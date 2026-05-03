@@ -1,4 +1,5 @@
 import type { Session } from './experiment';
+import { importSession } from './sessionIO';
 
 const STORAGE_KEY = 'experimentx.activeSession.v1';
 
@@ -10,8 +11,9 @@ export function loadSession(): Session | null {
   const raw = localStorage.getItem(STORAGE_KEY);
   if (!raw) return null;
   try {
-    return JSON.parse(raw) as Session;
+    return importSession(raw);
   } catch {
+    localStorage.removeItem(STORAGE_KEY);
     return null;
   }
 }

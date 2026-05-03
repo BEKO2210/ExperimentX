@@ -19,3 +19,7 @@ This reduces acceptance of malformed data and strengthens reproducibility/audita
 ## Validation
 - `npm test`
 - `npm run build`
+
+## Hotfix note
+If older malformed session JSON existed in browser localStorage, app startup could fail and appear as a blank/white page.
+The loader now validates and auto-clears malformed active-session payloads.

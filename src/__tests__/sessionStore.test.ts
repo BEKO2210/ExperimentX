@@ -24,4 +24,10 @@ describe('sessionStore', () => {
     clearSession();
     expect(loadSession()).toBeNull();
   });
+
+  it('drops malformed stored session instead of crashing', () => {
+    db.set(getStorageKey(), '{"id":"x"}');
+    expect(loadSession()).toBeNull();
+    expect(db.has(getStorageKey())).toBe(false);
+  });
 });
