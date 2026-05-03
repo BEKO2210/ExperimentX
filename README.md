@@ -36,6 +36,3 @@ See `docs/DEPLOY_GITHUB_PAGES.md` for full deployment steps.
 - Example session protocol: `docs/EXAMPLE_SESSION_PROTOCOL.md`
 - Release: `docs/RELEASE_v0.1.0.md`
 - Post-release bugfix: `docs/RELEASE_v0.1.1.md`
-
-
-If Pages appears blank/white after deploy, see `docs/DEPLOY_GITHUB_PAGES.md` troubleshooting.
