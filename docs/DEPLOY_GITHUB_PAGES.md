@@ -26,3 +26,14 @@ npm run preview:pages
 - No API keys are required.
 - Session data remains local to browser storage unless user exports JSON.
 - Use conservative claim language in all published pages.
+
+
+## White page troubleshooting
+If GitHub Pages shows a blank/white screen:
+1. Ensure deployment happened from `main` and workflow `Deploy Pages` succeeded.
+2. Verify built `index.html` references `/<repo>/assets/...` (for this repo: `/ExperimentX/assets/...`).
+3. Hard-refresh the browser and clear site data/localStorage if needed.
+4. Confirm latest commit includes the Pages base fix in `vite.config.ts` and redeploy.
+
+
+If a runtime exception still occurs, the app now shows a **Recovery Mode** screen instead of a blank page, including a button to clear local data and reload.
